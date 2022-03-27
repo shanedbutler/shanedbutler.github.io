@@ -6,6 +6,15 @@ body {
     margin: 30px 30px 30px 30px;
 }
 
+:link {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+:visited {
+    color: lightgray;
+}
+
 h1 {
     font-size: large;
 }
@@ -20,5 +29,8 @@ img {
 }
 
 .nav-bar {
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
+    background-color: hsl(135, 14%, 11%);
+    display: flex;
+    flex-direction: column;
 }
