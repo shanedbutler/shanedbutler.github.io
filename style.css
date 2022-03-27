@@ -6,12 +6,16 @@ body {
     margin: 30px 30px 30px 30px;
 }
 
-:link {
+a:link {
     text-decoration: none;
     color: lightgrey;
 }
 
-:visited {
+a:hover {
+    color:hsl(0, 0%, 91%)
+}
+
+a:visited {
     color: lightgray;
 }
 
