@@ -27,7 +27,7 @@ h2 {
     font-size: medium;
 }
 
-.nav-bar {
+nav {
     padding: 10px 10px 10px 10px;
     background-color: hsl(135, 14%, 11%);
     display: flex;
