@@ -28,12 +28,22 @@ h2 {
 }
 
 nav {
-    padding: 10px 10px 10px 10px;
+    padding: 20px 20px 20px 20px;
     background-color: hsl(135, 14%, 11%);
     display: flex;
     flex-direction: column;
-    width: 375px;
+    width: 250px;
 }
-.links {
-    padding: 10px 10px 10px 10px;
+
+.project {
+    padding: 20px 20px 20px 20px;
+    background-color: hsl(165, 14%, 11%);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 600px;
+
+}
+.page {
+    display: flex;
 }
