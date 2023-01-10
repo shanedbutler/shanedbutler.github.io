@@ -32,7 +32,7 @@ nav {
     background-color: hsl(135, 14%, 11%);
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
 }
 
 .project {
@@ -44,6 +44,10 @@ nav {
     width: 500px;
 
 }
-.page {
+.nav-row {
     display: flex;
+}
+
+.poker-gif {
+    width: 100%;
 }
