@@ -1,0 +1,6 @@
+<div x-data="{page: location.hash}" @hashchange.window="page = location.hash">
+    <span x-show="page === ''">Index Page</span>
+    <span x-show="page === '#contact'">Contact Page</span>
+    </div>
+    ...
+    <a href="#contact">Contact Us!</a>
