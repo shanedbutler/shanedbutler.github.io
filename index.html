@@ -1,117 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Add Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Alpine.js -->
-    <script
-      defer
-      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <title>Shane Butler - Full Stack Developer</title>
-  </head>
-  <body class="dark:bg-slate-800 dark:text-slate-300">
-    <main class="m-5 max-w-xl">
-      <section>
-        <h1 class="text-xl mb-2 dark:text-white">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Add Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>Shane Butler - Full Stack Developer</title>
+</head>
+
+<body class="dark:bg-slate-800 dark:text-slate-300">
+  <main class="m-5 max-w-xl">
+    <section>
+      <h1 class="text-xl mb-2 dark:text-white">
+        <a href="index.html">
           Shane Butler - Full Stack Developer
-        </h1>
-        <div class="text-sm mb-4">
-          <h3>
-            <a
-              class="hover:text-slate-600 dark:hover:text-white"
-              href="resume.html"
-              >Resume</a
-            >
-          </h3>
-          <h3>
-            <a
-              class="hover:text-slate-600 dark:hover:text-white"
-              target=”_blank”
-              href="https://github.com/shanedbutler"
-              >GitHub</a
-            >
-          </h3>
-          <h3>
-            <a
-              class="hover:text-slate-600 dark:hover:text-white"
-              target=”_blank”
-              href="https://www.linkedin.com/in/shanedbutler"
-              >LinkedIn</a
-            >
-          </h3>
-        </div>
-      </section>
-      <section>
-        <h2>About:</h2>
-        <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
-          Hi, my name is Shane (he/him). I am a software engineer who shifted from a
-          12-year photography career. I've collaborated in teams using version
-          control (Git), built front-end SPAs (Javascript / React), and wrote
-          back-end services (C# / .NET). I have a passion for web applications,
-          learning, and utilizing my skills to reach creative solutions. I also
-          enjoy cooking, birding, and snapping great photos.
-        </p>
-      </section>
-      <section>
-        <h2>Projects:</h2>
-        <div x-data="{ activeAccordion: 2 }">
-          <div>
-            <button
-              x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
-              :class="{ 'button-active': activeAccordion === 0 }"
-              class="button"
-            >
-              <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
-                Pick Up Game Planner
-              </h3>
-            </button>
+        </a>
+      </h1>
+      <div class="text-sm mb-4">
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
+        </h3>
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+            href="https://github.com/shanedbutler">GitHub</a>
+        </h3>
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+            href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
+        </h3>
+      </div>
+    </section>
+    <section>
+      <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
+        Hi, my name is Shane (he/him). I am a software engineer who shifted from a
+        12-year photography career. I've collaborated in teams using version
+        control (Git), built front-end SPAs (Javascript / React), and wrote
+        back-end services (C# / .NET). I have a passion for web applications,
+        learning, and utilizing my skills to reach creative solutions. I also
+        enjoy cooking, birding, and snapping great photos.
+      </p>
+    </section>
+    <section>
+      <h2>Projects:</h2>
+      <div x-data="{ activeAccordion: 2 }">
+        <div>
+          <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
+            :class="{ 'button-active': activeAccordion === 0 }" class="button">
+            <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
+              Pick Up Game Planner
+            </h3>
+          </button>
 
-            <div x-cloak x-show="activeAccordion === 0" x-collapse>
-              <p
-                class="text-slate-900 dark:text-slate-300 content text-sm mt-1 mb-3"
-              >
-                A web application to plan, organize, and manage community
-                pick up game events. Users can register for games, view
-                rosters, and be assigned positions based on their preferred
-                positions. The app handles a wait-list, a notification system,
-                and includes functionality for admins to manage games and users.
-                The app was designed and deployed for a community of soccer
-                players in Los Angeles.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <button
-              x-on:click="activeAccordion = activeAccordion === 1 ? false : 1"
-              :class="{ 'button-active': activeAccordion === 1 }"
-              class="button"
-            >
-              <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
-                What's for Dinner Poker
-              </h3>
-            </button>
-
-            <div x-cloak x-show="activeAccordion === 1" x-collapse>
-              <p
-                class="text-slate-900 dark:text-slate-300 content text-sm mt-1 mb-3"
-              >
-                A web game that is played to create a five-meal meal plan. Users
-                select a pre-made deck based on seasonal meal themes or their
-                own user created deck. The two-round interactive game-play
-                results in a final “hand” of five meal cards. The game seeks to
-                help meal planning by reducing decision fatigue while remaining
-                interactive, and customizable through user-created decks.
-              </p>
-            </div>
+          <div x-cloak x-show="activeAccordion === 0" x-collapse>
+            <p class="text-slate-900 dark:text-slate-300 content text-sm mt-1 mb-3">
+              A web application to plan, organize, and manage community
+              pick up game events. Users can register for games, view
+              rosters, and be assigned positions based on their preferred
+              positions. The app handles a wait-list, a notification system,
+              and includes functionality for admins to manage games and users.
+              The app was designed and deployed for a community of soccer
+              players in Los Angeles.
+            </p>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
+
+        <div>
+          <button x-on:click="activeAccordion = activeAccordion === 1 ? false : 1"
+            :class="{ 'button-active': activeAccordion === 1 }" class="button">
+            <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
+              What's for Dinner Poker
+            </h3>
+          </button>
+
+          <div x-cloak x-show="activeAccordion === 1" x-collapse>
+            <p class="text-slate-900 dark:text-slate-300 content text-sm mt-1 mb-3">
+              A web game that is played to create a five-meal meal plan. Users
+              select a pre-made deck based on seasonal meal themes or their
+              own user created deck. The two-round interactive game-play
+              results in a final “hand” of five meal cards. The game seeks to
+              help meal planning by reducing decision fatigue while remaining
+              interactive, and customizable through user-created decks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
