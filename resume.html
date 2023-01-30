@@ -1,16 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Add Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <title>Shane Butler - Full Stack Developer</title>
-  </head>
-<body>
-    <h1 x-data="{ message: 'Resume to be added soon ❤️' }" x-text="message"></h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Add Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <title>Shane Butler - Full Stack Developer - Resume</title>
+</head>
+
+<body class="dark:bg-slate-800 dark:text-slate-300">
+  <main class="m-5 max-w-xl">
+    <section>
+      <h1 class="text-xl mb-2 dark:text-white">
+        <a href="index.html"> Shane Butler - Full Stack Developer </a>
+      </h1>
+      <div class="text-sm mb-4">
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
+        </h3>
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" target="”_blank”"
+            href="https://github.com/shanedbutler">GitHub</a>
+        </h3>
+        <h3>
+          <a class="hover:text-slate-600 dark:hover:text-white" target="”_blank”"
+            href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
+        </h3>
+      </div>
+    </section>
+    <div x-data="{ activeAccordion: 0 }">
+      <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
+        :class="{ 'button-active': activeAccordion === 0 }" class="button">
+        <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience</h3>
+      </button>
+      <div x-show="activeAccordion === 0" x-collapse class="mb-2 space-y-4">
+        <div>
+          <h4>Junior Full Stack Developer</h4>
+          <div class="italic text-sm mb-1">
+            NewForce - Remote / Martinsburg, WV (June 2022 - January 2023)
+          </div>
+          <ul class="list-disc ml-4 text-sm">
+            <li>
+              Applied object-oriented programming fundamentals through team
+              based projects that reflect real world business problems.
+            </li>
+            <li>Collaborated remotely on projects using Slack and Zoom.</li>
+            <li>Managed source code version control with Git and GitHub.</li>
+            <li>
+              Applied JavaScript, HTML, and CSS fundamentals to build a
+              feature rich social media dashboard with CRUD functionality.
+            </li>
+            <li>
+              Leveraged native ES6 module bundling to build DRY, reusable
+              components.
+            </li>
+            <li>
+              Planned applications through white boarding dependencies,
+              building ERDs, and sketching-up wireframes with Figma and
+              FigJam.
+            </li>
+            <li>
+              Built and interacted with databases using SQL Server and
+              ADO.NET.
+            </li>
+            <li>Developed a blog management platform in ASP.NET with MVC.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Professional Photographer</h4>
+          <div class="italic text-sm mb-1">
+            Freelance - Washington, DC, Richmond, VA, and Durham, NC
+          </div>
+          <div class="text-sm mb-1">
+            Architectural photographer with additional experience in
+            portraiture, art museum photography, and commercial videography.
+            Remotely worked with Apartments.com and Google “Business View”.
+          </div>
+          <ul class="list-disc ml-4 text-sm">
+            <li>
+              Worked extensively with imaging and related software for client
+              review, editing, post-production, and export.
+            </li>
+            <li>
+              Deployed and manage workspace server for project tracking,
+              delivery, invoicing, licensing, and asset archival.
+            </li>
+            <li>
+              Designed and managed portfolio website using HTML and CSS.
+            </li>
+            <li>
+              Maintain regular clients through marketing, on-time delivery,
+              clear communication, and persistent attention to detail and
+              client needs.
+            </li>
+            <li>
+              Planned and led after-school class for children on basics of
+              photography.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div x-data="{ activeAccordion: 0 }">
+        <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
+          :class="{ 'button-active': activeAccordion === 0 }" class="button">
+          <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Education</h3>
+        </button>
+        <div x-show="activeAccordion === 0" x-collapse class="mb-2 space-y-4">
+          <div class="space-y-4">
+            <div>
+              <h4>NewForce Coding School</h4>
+              <div class="italic text-sm">June 2022 - January 2023</div>
+              <ul class="list-disc ml-4 text-sm">
+                <li>Full-time Web Development Training</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Microsoft Azure Fundamentals</h4>
+              <div class="italic text-sm">December 2022</div>
+              <ul class="list-disc ml-4 text-sm">
+                <li>AZ-900 Certification</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Old Dominion University</h4>
+              <div class="italic text-sm">August 2005 - January 2010</div>
+              <ul class="list-disc ml-4 text-sm">
+                <li>BFA - Photo and Print Media</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
 </body>
+
 </html>
