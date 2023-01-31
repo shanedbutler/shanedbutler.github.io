@@ -8,50 +8,66 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Add Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Add Alpine.js -->
+  <!-- Alpine.js Plugins -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.11.1/dist/cdn.min.js"></script>
+  <!-- Alpine.js Core -->
   <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+  <!-- Google Fonts-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+  </style>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
   <title>Shane Butler - Full Stack Developer</title>
 </head>
 
-<body class="dark:bg-slate-800 dark:text-slate-300">
-  <main class="m-5 max-w-xl">
+<body class="flex justify-center dark:bg-slate-800 dark:text-slate-300">
+  <main class="my-6  mx-auto w-5/6 md:w-4/6 lg:w-7/12 xl:w-2/4">
     <section>
-      <h1 class="text-xl mb-2 dark:text-white">
-        <a href="index.html">
-          Shane Butler - Full Stack Developer
-        </a>
+      <h1 class="text-2xl mb-2 dark:text-white">
+        <a href="index.html">Shane Butler</a>
       </h1>
-      <div class="text-sm mb-4">
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
-        </h3>
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
-            href="https://github.com/shanedbutler">GitHub</a>
-        </h3>
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
-            href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
-        </h3>
       </div>
+      <div class="flex justify-between">
+        <div class="mb-4">
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
+          </h3>
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+              href="https://github.com/shanedbutler">GitHub</a>
+          </h3>
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+              href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
+          </h3>
+        </div>
+        <img class="w-28 h-28 my-5 -mt-10 ml-20" src="assets/sbutler-400.webp">
     </section>
     <section>
       <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
-        Hi, my name is Shane (he/him). I am a software engineer who shifted from a
-        12-year photography career. I've collaborated in teams using version
-        control (Git), built front-end SPAs (Javascript / React), and wrote
+        Hi, my name is Shane (he/him). I am a software engineer who has shifted
+        from a 12-year photography career. I've collaborated in teams using version
+        control (Git), built front-end SPAs (Javascript / React), and wrote connecting
         back-end services (C# / .NET). I have a passion for web applications,
         learning, and utilizing my skills to reach creative solutions. I also
-        enjoy cooking, birding, and snapping great photos.
+        enjoy cooking, birding, and snapping great photos. Let's get in touch!
       </p>
     </section>
-    <section>
-      <h2>Projects:</h2>
+    <section class="leading-relaxed">
+      <h2 class="underline text-lg dark:text-white mb-1">Projects</h2>
       <div x-data="{ activeAccordion: 2 }">
         <div>
           <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
             :class="{ 'button-active': activeAccordion === 0 }" class="button">
-            <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
+            <h3 class="hover:text-slate-600 dark:hover:text-white">
               Pick Up Game Planner
             </h3>
           </button>
@@ -63,8 +79,9 @@
               rosters, and be assigned positions based on their preferred
               positions. The app handles a wait-list, a notification system,
               and includes functionality for admins to manage games and users.
-              The app was designed and deployed for a community of soccer
-              players in Los Angeles.
+              The app was designed for a community of soccer players in Los Angeles. See
+              <a class="underline hover:text-slate-600 dark:text-white hover:dark:text-slate-300" target="_blank"
+              href="https://www.loom.com/share/3d06a0a110cf495ea404cc1eabec8ea5">Loom demo</a>.
             </p>
           </div>
         </div>
@@ -72,7 +89,7 @@
         <div>
           <button x-on:click="activeAccordion = activeAccordion === 1 ? false : 1"
             :class="{ 'button-active': activeAccordion === 1 }" class="button">
-            <h3 class="text-sm hover:text-slate-600 dark:hover:text-white">
+            <h3 class="hover:text-slate-600 dark:hover:text-white">
               What's for Dinner Poker
             </h3>
           </button>
@@ -84,7 +101,9 @@
               own user created deck. The two-round interactive game-play
               results in a final “hand” of five meal cards. The game seeks to
               help meal planning by reducing decision fatigue while remaining
-              interactive, and customizable through user-created decks.
+              interactive, and customizable through user-created decks. See
+              <a class="underline hover:text-slate-600 dark:text-white hover:dark:text-slate-300" target="_blank"
+                href="https://www.loom.com/share/eb898482ea8e484dad6c450e59494dbe">Loom demo</a>.
             </p>
           </div>
         </div>
