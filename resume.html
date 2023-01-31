@@ -14,7 +14,7 @@
   <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
   <!-- Google Fonts-->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap');
   </style>
   <style>
     [x-cloak] {
@@ -53,18 +53,18 @@
     <div x-data="{ activeAccordion: 0 }">
       <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
         :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
-        <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience</h3>
+        <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience</h3>
       </button>
       <div x-show="activeAccordion === 0" x-collapse class="space-y-4">
         <div>
-          <h4 class="dark:text-slate-200">Junior Full Stack Developer</h4>
+          <h4 class="font-medium dark:text-slate-200">Junior Full Stack Developer</h4>
           <div class="text-sm">
             NewForce - Remote / Martinsburg, WV
           </div>
           <div class="italic text-sm mb-1">
             June 2022 - January 2023
           </div>
-          <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+          <ul class="text-slate-600 text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
             <li>
               Applied object-oriented programming fundamentals through team
               based projects that reflect real world business problems.
@@ -92,19 +92,19 @@
           </ul>
         </div>
         <div class="pb-4">
-          <h4>Professional Photographer</h4>
+          <h4 class="font-medium dark:text-slate-200">Professional Photographer</h4>
           <div class="text-sm">
             Freelance - Richmond, VA / Durham, NC
           </div>
           <div class="italic text-sm mb-1">
             May 2010 - June 2022
           </div>
-          <div class="dark:text-slate-400 text-sm mb-1">
+          <div class="text-slate-600 dark:text-slate-400 text-sm mb-1">
             Architectural photographer with additional experience in
             portraiture, art museum photography, and commercial videography.
             Remotely worked with Apartments.com and Google “Business View”.
           </div>
-          <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+          <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
             <li>
               Worked extensively with imaging and related software for client
               review, editing, post-production, and export.
@@ -131,28 +131,28 @@
       <div x-data="{ activeAccordion: 0 }">
         <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
           :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
-          <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Education</h3>
+          <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Education</h3>
         </button>
         <div x-show="activeAccordion === 0" x-collapse class="space-y-4">
           <div class="space-y-4">
             <div>
-              <h4>NewForce Coding School</h4>
+              <h4 class="font-medium dark:text-slate-200">NewForce Coding School</h4>
               <div class="italic text-sm">June 2022 - January 2023</div>
-              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>Full-time Software Development Training</li>
               </ul>
             </div>
             <div>
-              <h4>Microsoft Azure Fundamentals</h4>
+              <h4 class="font-medium dark:text-slate-200">Microsoft Azure Fundamentals</h4>
               <div class="italic text-sm">December 2022</div>
-              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>AZ-900 Certification</li>
               </ul>
             </div>
             <div>
-              <h4>Old Dominion University</h4>
+              <h4 class="font-medium dark:text-slate-200">Old Dominion University</h4>
               <div class="italic text-sm">August 2005 - January 2010</div>
-              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>BFA - Photo and Print Media</li>
               </ul>
             </div>
