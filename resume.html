@@ -12,42 +12,59 @@
   <script defer src="https://unpkg.com/@alpinejs/collapse@3.11.1/dist/cdn.min.js"></script>
   <!-- Alpine.js Core -->
   <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
-  <style>[x-cloak] { display: none !important; }</style>
+  <!-- Google Fonts-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300&display=swap');
+  </style>
+  <style>
+    [x-cloak] {
+      display: none !important;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+    } 
+  </style>
   <title>Shane Butler - Full Stack Developer - Resume</title>
 </head>
 
-<body class="dark:bg-slate-800 dark:text-slate-300">
-  <main class="m-5 max-w-xl">
+<body class="flex justify-center dark:bg-slate-800 dark:text-slate-300">
+  <main class="my-6 mx-auto w-5/6 md:w-4/6 lg:w-7/12 xl:w-2/4">
     <section>
-      <h1 class="text-xl mb-2 dark:text-white">
-        <a href="index.html"> Shane Butler - Full Stack Developer </a>
+      <h1 class="text-2xl mb-2 dark:text-white">
+        <a href="index.html">Shane Butler</a>
       </h1>
-      <div class="text-sm mb-4">
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
-        </h3>
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" target="”_blank”"
-            href="https://github.com/shanedbutler">GitHub</a>
-        </h3>
-        <h3>
-          <a class="hover:text-slate-600 dark:hover:text-white" target="”_blank”"
-            href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
-        </h3>
       </div>
+      <div class="flex justify-between">
+        <div class="mb-4">
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" href="resume.html">Resume</a>
+          </h3>
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+              href="https://github.com/shanedbutler">GitHub</a>
+          </h3>
+          <h3>
+            <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
+              href="https://www.linkedin.com/in/shanedbutler">LinkedIn</a>
+          </h3>
+        </div>
+        <img class="w-28 h-28 my-5 -mt-10 ml-20" src="assets/sbutler-400.webp">
     </section>
     <div x-data="{ activeAccordion: 0 }">
       <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
-        :class="{ 'button-active': activeAccordion === 0 }" class="button">
+        :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
         <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience</h3>
       </button>
-      <div x-show="activeAccordion === 0" x-collapse class="mb-2 space-y-4">
+      <div x-show="activeAccordion === 0" x-collapse class="space-y-4">
         <div>
-          <h4>Junior Full Stack Developer</h4>
-          <div class="italic text-sm mb-1">
-            NewForce - Remote / Martinsburg, WV (June 2022 - January 2023)
+          <h4 class="dark:text-slate-200">Junior Full Stack Developer</h4>
+          <div class="text-sm">
+            NewForce - Remote / Martinsburg, WV
           </div>
-          <ul class="list-disc ml-4 text-sm">
+          <div class="italic text-sm mb-1">
+            June 2022 - January 2023
+          </div>
+          <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
             <li>
               Applied object-oriented programming fundamentals through team
               based projects that reflect real world business problems.
@@ -74,17 +91,20 @@
             <li>Developed a blog management platform in ASP.NET with MVC.</li>
           </ul>
         </div>
-        <div>
+        <div class="pb-4">
           <h4>Professional Photographer</h4>
-          <div class="italic text-sm mb-1">
-            Freelance - Washington, DC, Richmond, VA, and Durham, NC
+          <div class="text-sm">
+            Freelance - Richmond, VA / Durham, NC
           </div>
-          <div class="text-sm mb-1">
+          <div class="italic text-sm mb-1">
+            May 2010 - June 2022
+          </div>
+          <div class="dark:text-slate-400 text-sm mb-1">
             Architectural photographer with additional experience in
             portraiture, art museum photography, and commercial videography.
             Remotely worked with Apartments.com and Google “Business View”.
           </div>
-          <ul class="list-disc ml-4 text-sm">
+          <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
             <li>
               Worked extensively with imaging and related software for client
               review, editing, post-production, and export.
@@ -110,29 +130,29 @@
       </div>
       <div x-data="{ activeAccordion: 0 }">
         <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
-          :class="{ 'button-active': activeAccordion === 0 }" class="button">
+          :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
           <h3 class="text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Education</h3>
         </button>
-        <div x-show="activeAccordion === 0" x-collapse class="mb-2 space-y-4">
+        <div x-show="activeAccordion === 0" x-collapse class="space-y-4">
           <div class="space-y-4">
             <div>
               <h4>NewForce Coding School</h4>
               <div class="italic text-sm">June 2022 - January 2023</div>
-              <ul class="list-disc ml-4 text-sm">
-                <li>Full-time Web Development Training</li>
+              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
+                <li>Full-time Software Development Training</li>
               </ul>
             </div>
             <div>
               <h4>Microsoft Azure Fundamentals</h4>
               <div class="italic text-sm">December 2022</div>
-              <ul class="list-disc ml-4 text-sm">
+              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>AZ-900 Certification</li>
               </ul>
             </div>
             <div>
               <h4>Old Dominion University</h4>
               <div class="italic text-sm">August 2005 - January 2010</div>
-              <ul class="list-disc ml-4 text-sm">
+              <ul class="dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>BFA - Photo and Print Media</li>
               </ul>
             </div>
