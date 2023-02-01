@@ -5,9 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
   <!-- Add Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="styles.css" rel="stylesheet">
   <!-- Alpine.js Plugins -->
   <script defer src="https://unpkg.com/@alpinejs/collapse@3.11.1/dist/cdn.min.js"></script>
   <!-- Alpine.js Core -->
@@ -20,9 +19,10 @@
     [x-cloak] {
       display: none !important;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
-    } 
+    }
   </style>
   <title>Shane Butler - Full Stack Developer - Resume</title>
 </head>
@@ -53,7 +53,8 @@
     <div x-data="{ activeAccordion: 0 }">
       <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
         :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
-        <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience</h3>
+        <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience
+        </h3>
       </button>
       <div x-show="activeAccordion === 0" x-collapse class="space-y-4">
         <div>
