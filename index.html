@@ -49,14 +49,24 @@
             </h3>
           </a>
           <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank” href="https://github.com/shanedbutler">
-            <h3>
+            <h3 class="group">
               GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="hidden group-hover:inline w-4 h-4 mb-1">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
             </h3>
           </a>
           <a class="hover:text-slate-600 dark:hover:text-white" target=”_blank”
             href="https://www.linkedin.com/in/shanedbutler">
-            <h3>
+            <h3 class="group">
               LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="hidden group-hover:inline w-4 h-4 mb-1">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
             </h3>
           </a>
         </div>
@@ -76,8 +86,8 @@
       <section x-show="!page" class="leading-relaxed">
         <h2 class="underline text-lg dark:text-white mb-1">Projects</h2>
         <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
-          Both of the projects below were designed and built as capstone projects to the
-          NewForce Coding School. Please check them out!
+          Both of the projects below were designed and built in 2022.
+          Please check them out!
         </p>
         <div x-data="{ open: false }">
           <div>
@@ -119,7 +129,8 @@
           </div>
 
           <div>
-            <button x-on:click="open = open === 1 ? false : 1" :class="{ 'button-active': open === 1 }" class="button md:mt-1 mt-2">
+            <button x-on:click="open = open === 1 ? false : 1" :class="{ 'button-active': open === 1 }"
+              class="button md:mt-1 mt-2">
               <h3 class="hover:text-slate-600 dark:hover:text-white">
                 What's for Dinner Poker
                 <span x-show="open === false || open === 0">
