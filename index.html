@@ -11,33 +11,72 @@
   <script defer src="https://unpkg.com/@alpinejs/collapse@3.11.1/dist/cdn.min.js"></script>
   <!-- Alpine.js Core -->
   <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+  <!-- Dark mode handling -->
+  <script>
+    if (localStorage.isDark === 'true' || (!('isDark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      localStorage.isDark = 'true';
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const toggleTheme = () => {
+      if (localStorage.isDark === 'true') {
+        localStorage.isDark = 'false';
+        document.documentElement.classList.remove('dark');
+      }
+      else {
+        localStorage.isDark = 'true';
+        document.documentElement.classList.add('dark');
+      }
+    }
+  </script>
   <!-- Google Fonts-->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap');
   </style>
-  <style>
-    [x-cloak] {
-      display: none !important;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      padding-left: calc(100vw - 100%);
-      box-sizing: border-box;
-    }
-  </style>
   <title>Shane Butler - Full Stack Developer</title>
 </head>
 
-<body class="flex justify-center dark:bg-slate-800 dark:text-slate-300 bg-cover">
-  <main x-data="{page: location.hash}" @hashchange.window="page = location.hash"
-    class="my-6 mx-auto w-5/6 md:w-4/6 lg:w-7/12 xl:w-2/4 2xl:w-5/12">
-    <section>
-      <h1 class="text-2xl mb-2 cursor-pointer dark:text-white">
-        <a x-on:click="location.hash = ''">Shane Butler</a>
-      </h1>
-      </div>
+<body class="dark:bg-slate-800 dark:text-slate-300">
+  <main x-data="{ page: location.hash }" @hashchange.window="page = location.hash"
+    class="h-full my-6 mx-auto w-5/6 md:w-4/6 lg:w-7/12 xl:w-2/4 2xl:w-5/12">
+    <section x-data="{ dark: JSON.parse(localStorage.getItem('isDark')) }">
       <div class="flex justify-between">
+        <h1 class="text-2xl mb-2 cursor-pointer dark:text-white">
+          <a x-on:click="location.hash = ''">Shane Butler</a>
+        </h1>
+        <!--Dark mode to light mode -->
+        <div x-cloak x-show="dark">
+          <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = false">
+            <img
+              class="cursor-pointer w-28 h-28 dark:group-hover:opacity-50 dark:group-hover:brightness-95 opacity-95 group-hover:opacity-100 group-hover:brightness-75 bg-clip-content"
+              src="assets/sbutler-224.png">
+            <div class="cursor-pointer absolute opacity-0 group-hover:opacity-100 self-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!--Light mode to dark mode-->
+        <div x-cloak x-show="!dark">
+          <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = true">
+            <img
+              class="cursor-pointer w-28 h-28 dark:group-hover:opacity-25 opacity-100 group-hover:opacity-100 group-hover:brightness-75 bg-clip-content"
+              src="assets/sbutler-224-light.png">
+            <div class="cursor-pointer absolute opacity-0 group-hover:opacity-100 self-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex -mt-16 justify-between">
         <div class="mb-4 cursor-pointer leading-relaxed mt-1 md:mt-0 md:leading-normal">
           <a x-on:click="location.hash = ''" class="hover:text-slate-600 dark:hover:text-white">
             <h3 x-bind:class="page === '' && 'underline'">
@@ -71,7 +110,6 @@
             </h3>
           </a>
         </div>
-        <img class="w-28 h-28 my-5 -mt-10 ml-20" src="assets/sbutler-224.png">
     </section>
     <section>
       <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
@@ -95,6 +133,7 @@
             <button x-on:click="open = open === 0 ? false : 0" :class="{ 'button-active': open === 0 }" class="button">
               <h3 class="hover:text-slate-600 dark:hover:text-white">
                 Pick Up Game Planner
+                <!-- Chevron icon -->
                 <span x-show="open === false | open === 1">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="inline w-5 h-5">
@@ -134,6 +173,7 @@
               class="button md:mt-1 mt-2">
               <h3 class="hover:text-slate-600 dark:hover:text-white">
                 What's for Dinner Poker
+                <!-- Chevron icon -->
                 <span x-show="open === false || open === 0">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" class="inline w-5 h-5">
