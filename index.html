@@ -11,14 +11,21 @@
   <script defer src="https://unpkg.com/@alpinejs/collapse@3.11.1/dist/cdn.min.js"></script>
   <!-- Alpine.js Core -->
   <script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+  <!-- Dark mode handling -->
   <script>
+    if (localStorage.isDark === 'true' || (!('isDark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      localStorage.isDark = 'true';
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
     const toggleTheme = () => {
-      if (localStorage.theme === 'dark') {
-        localStorage.theme = 'light';
+      if (localStorage.isDark === 'true') {
+        localStorage.isDark = 'false';
         document.documentElement.classList.remove('dark');
       }
       else {
-        localStorage.theme = 'dark';
+        localStorage.isDark = 'true';
         document.documentElement.classList.add('dark');
       }
     }
@@ -33,15 +40,14 @@
 <body class="dark:bg-slate-800 dark:text-slate-300">
   <main x-data="{ page: location.hash }" @hashchange.window="page = location.hash"
     class="h-full my-6 mx-auto w-5/6 md:w-4/6 lg:w-7/12 xl:w-2/4 2xl:w-5/12">
-    <section x-data="{ dark: true }">
+    <section x-data="{ dark: JSON.parse(localStorage.getItem('isDark')) }">
       <div class="flex justify-between">
         <h1 class="text-2xl mb-2 cursor-pointer dark:text-white">
           <a x-on:click="location.hash = ''">Shane Butler</a>
         </h1>
         <!--Dark mode to light mode -->
-        <div x-cloak x-show="!dark">
-          <div class="group flex-shrink-0 flex justify-center"
-            x-on:click="toggleTheme; dark = true">
+        <div x-cloak x-show="dark">
+          <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = false">
             <img
               class="cursor-pointer w-28 h-28 dark:group-hover:opacity-50 dark:group-hover:brightness-95 opacity-95 group-hover:opacity-100 group-hover:brightness-75 bg-clip-content"
               src="assets/sbutler-224.png">
@@ -55,8 +61,8 @@
           </div>
         </div>
         <!--Light mode to dark mode-->
-        <div x-cloak x-show="dark">
-          <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = false">
+        <div x-cloak x-show="!dark">
+          <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = true">
             <img
               class="cursor-pointer w-28 h-28 dark:group-hover:opacity-25 opacity-100 group-hover:opacity-100 group-hover:brightness-75 bg-clip-content"
               src="assets/sbutler-224-light.png">
