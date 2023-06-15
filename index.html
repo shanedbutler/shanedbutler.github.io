@@ -57,7 +57,7 @@
         <h1 class="text-2xl mb-1 cursor-pointer dark:text-white">
           <a x-on:click="location.hash = ''">Shane Butler</a>
         </h1>
-        <!--Dark mode to light mode -->
+        <!-- Avatar: dark mode to light mode -->
         <div x-cloak x-show="dark">
           <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = false">
             <img
@@ -72,7 +72,7 @@
             </div>
           </div>
         </div>
-        <!--Light mode to dark mode-->
+        <!-- Avatar: light mode to dark mode -->
         <div x-cloak x-show="!dark">
           <div class="group flex-shrink-0 flex justify-center" x-on:click="toggleTheme; dark = true">
             <img
@@ -88,6 +88,7 @@
           </div>
         </div>
       </div>
+      <!-- Nav -->
       <div class="flex -mt-16 justify-between">
         <div class="mb-4 cursor-pointer leading-loose md:leading-normal">
           <a x-on:click="location.hash = ''" class="hover:text-slate-600 dark:hover:text-white">
@@ -123,16 +124,18 @@
           </a>
         </div>
     </section>
+    <!-- Profile -->
     <section>
       <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
         Hi, my name is Shane (he/him). I am a software engineer with 2+ years of combined development experience. 
-        I've collaborated in teams using version control (Git), built front-end SPAs (Javascript / React), 
+        I've collaborated in teams using version control (Git), built front-end SPAs (React & Angular), 
         and wrote connecting back-end services (C# / .NET). I have a passion for web applications, 
         learning, and utilizing my skills to reach creative solutions. I also enjoy cooking, birding, 
         and <a href="http://www.shanebutlerphoto.com">snapping great photos</a>. Let's get in touch!
       </p>
     </section>
     <div>
+      <!-- Projects -->
       <section x-show="!page" class="leading-loose md:leading-relaxed">
         <h2 class="underline text-lg dark:text-white mb-1">Projects</h2>
         <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
@@ -225,6 +228,7 @@
           </div>
         </div>
       </section>
+      <!-- Resume -->
       <section x-cloak x-show="page === '#resume'" class="leading-relaxed">
         <div x-data="{ activeAccordion: 0 }">
           <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
@@ -247,21 +251,22 @@
               </div>
               <ul class="text-slate-600 text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>
-                  Worked in Agile using test driven development, Azure Dev-Ops, and CI/CD pipelines
-                  to meet business requirements.
+                  Work in agile using test driven development, Azure Dev-Ops, and CI/CD pipelines
+                  to meet business requirements and stakeholder needs.
                 </li>
                 <li>
-                  Migrated .NET Framework applications to .NET Core and AngularJS front-ends to Angular.
+                  Migrate production applications from .NET Framework to .NET 6 and rebuild 
+                  AngularJS front-ends in Angular 15 with TypeScript.
                 </li>
                 <li>
-                  Developed and maintained mobile apps using Expo and React Native.
+                  Develop and maintain mobile apps using Expo and React Native.
                 </li>
                 <li>
-                  Utilized Entity Framework ORM to access, map, and manipulate SQL Server 
+                  Utilize Entity Framework ORM to access, map, and manipulate SQL Server 
                   data using LINQ.
                 </li>
                 <li>
-                  Wrote and maintained unit tests using NUnit and Moq.
+                  Write and maintain unit tests using NUnit and Moq.
                 </li>
               </ul>
             </div>
@@ -323,7 +328,7 @@
                   delivery, invoicing, licensing, and asset archival.
                 </li>
                 <li>
-                  Designed and managed portfolio website using HTML and CSS.
+                  Designed and maintained portfolio website using HTML and CSS.
                 </li>
                 <li>
                   Maintain regular clients through marketing, on-time delivery,
