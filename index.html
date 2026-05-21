@@ -127,11 +127,11 @@
     <!-- Profile -->
     <section>
       <p class="text-slate-900 dark:text-slate-300 text-sm mb-4">
-        Hi, my name is Shane (he/him). I am a software engineer with 3+ years of combined development experience.
-        I've collaborated in teams using version control (Git), built front-end clients (React & Angular),
-        and wrote connecting back-end services (C# / .NET). I'm passionate about leveraging current technology 
-        to create innovative solutions and deliver exceptional user experiences. I also enjoy cooking, birding,
-        and <a href="http://www.shanebutlerphoto.com">snapping great photos</a>. Let's get in touch!
+        Full-stack Software Engineer with over 4 years of professional experience designing and building web
+        applications. Proven track record of taking complex projects from greenfield to MVP, architecting robust
+        database schemas, and designing user-centric prototypes in Figma. I collaborate with cross-functional
+        stakeholders to align delivery with business objectives while leveraging AI tools to maximize development
+        velocity and maintain high quality standards.
       </p>
     </section>
     <div>
@@ -237,6 +237,20 @@
         <div x-data="{ activeAccordion: 0 }">
           <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
             :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
+            <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Technical
+              Skills</h3>
+          </button>
+          <div x-show="activeAccordion === 0" x-collapse class="space-y-2 text-sm text-slate-600 dark:text-slate-400 pb-2">
+            <p><span class="font-medium dark:text-slate-200">Languages:</span> C# / .NET, JavaScript, SQL</p>
+            <p><span class="font-medium dark:text-slate-200">Frameworks &amp; Libraries:</span> React, Redux / RTK Query,
+              ASP.NET, React Native, MUI, MUI X, Tailwind, Bootstrap 5</p>
+            <p><span class="font-medium dark:text-slate-200">Cloud &amp; Tools:</span> Azure (Functions, Maps API, DevOps,
+              Data Factory), SQL Server, Entity Framework, Git, Figma, GitHub Copilot, Claude Code</p>
+          </div>
+        </div>
+        <div class="mt-2" x-data="{ activeAccordion: 0 }">
+          <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
+            :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
             <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Work Experience
             </h3>
           </button>
@@ -244,71 +258,71 @@
             <div>
               <h4 class="font-medium dark:text-slate-200">Software Engineer</h4>
               <div class="text-sm">
-                GDC IT Solutions - Remote / Martinsburg, WV
+                GDC IT Solutions - Remote / Chambersburg, PA
               </div>
               <div class="italic text-sm mb-1">
                 January 2024 - Present
               </div>
               <div class="text-slate-600 dark:text-slate-400 text-sm mb-1">
-                Mid-level role in application development department handling a wide variety of client requirements.
+                Mid-level role in application development across multiple client products and requirements.
               </div>
-              <ul class="text-slate-600 text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>
-                  Lead development of features and UX design for K-12 school survey 
-                  metrics SaaS application using React, .NET 8, and Azure.
+                  Championed code quality and team growth by mentoring an entry-level developer through weekly
+                  1:1 syncs, rigorous PR reviews, and collaborative technical discussions.
                 </li>
                 <li>
-                  Created Figma mockups to enhance user interface and experience.
+                  Designed and built visualization and reporting features with stakeholders for a K-12 accountability
+                  platform using React, Redux Toolkit, MUI, and ASP.NET.
                 </li>
                 <li>
-                  Developed proof-of-concept GPT-powered agent for customer service 
-                  chat features.
+                  Led greenfield development of a K-12 standardized test scheduling app from concept to MVP,
+                  including database schema, Figma prototypes, and automated student-to-test-site routing.
                 </li>
                 <li>
-                  Engineered CSV to Shopify import tool using Azure Functions and 
-                  Microsoft Power Apps.
+                  Implemented Azure Functions and Azure Maps API workflows to support automated routing and
+                  location-aware scheduling scenarios.
                 </li>
                 <li>
-                  Developed and maintained HTML5 canvas based drawing tool.
+                  Designed and implemented an e-learning platform course catalog plus dynamic course and assessment
+                  builder for social work trainees and administrators.
+                </li>
+                <li>
+                  Developed and maintained an HTML5 canvas-based floorplan drawing tool.
                 </li>
               </ul>
             </div>
             <div>
-              <h4 class="font-medium dark:text-slate-200">Junior Developer</h4>
+              <h4 class="font-medium dark:text-slate-200">Junior Full-Stack Developer</h4>
               <div class="text-sm">
-                Bayada Home Health - Remote / Martinsburg, WV
+                Bayada Home Health - Remote / Moorestown, NJ
               </div>
               <div class="italic text-sm mb-1">
                 March 2023 - July 2023
               </div>
               <div class="text-slate-600 dark:text-slate-400 text-sm mb-1">
-                Contract role on team tasked with adding features and maintaining internal apps.
+                Contract role on team tasked with developing internal health care support applications.
               </div>
-              <ul class="text-slate-600 text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>
-                  Worked in agile using test driven development, Azure Dev-Ops, and CI/CD
-                  pipelines to meet business requirements and stakeholder needs.
+                  Migrated legacy critical production applications from .NET Framework to .NET 6 and from AngularJS
+                  to Angular 15.
                 </li>
                 <li>
-                  Migrated production applications from .NET Framework to .NET 6 and AngularJS
-                  to Angular 15 with TypeScript.
+                  Developed internal mobile applications using Expo and React Native.
                 </li>
                 <li>
-                  Developed and maintained mobile apps using Expo and React Native.
+                  Used Entity Framework for ORM-powered development to map, manipulate, and migrate data.
                 </li>
                 <li>
-                  Utilized Entity Framework ORM to access, map, and manipulate SQL Server
-                  data using LINQ.
-                </li>
-                <li>
-                  Wrote and maintained unit tests using NUnit and Moq frameworks.
+                  Applied test-driven development practices through unit and integration testing.
                 </li>
               </ul>
             </div>
             <div>
               <h4 class="font-medium dark:text-slate-200">Junior Full Stack Developer</h4>
               <div class="text-sm">
-                NewForce - Remote / Martinsburg, WV
+                NewForce - Remote / Charleston, WV
               </div>
               <div class="italic text-sm mb-1">
                 June 2022 - January 2023
@@ -317,25 +331,16 @@
                 Full-time program in simulated work environment working on
                 team projects that reflect real world business problems.
               </div>
-              <ul class="text-slate-600 text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
+              <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                 <li>
-                  Collaborated remotely on projects using Slack and Zoom.
+                  Collaborated remotely using Git, GitHub, and agile methodologies to solve real-world business
+                  problems.
                 </li>
                 <li>
-                  Managed source code version control with Git and GitHub.
+                  Built SPA applications with reusable components in the React ecosystem.
                 </li>
                 <li>
-                  Leveraged native ES6 Javascript module bundling to build DRY, reusable
-                  components through clean, readable code.
-                </li>
-                <li>
-                  Planned applications through white boarding dependencies,
-                  building ERDs, and sketching-up wireframes with Figma and
-                  FigJam.
-                </li>
-                <li>
-                  Built and interacted with databases using SQL Server and
-                  ADO.NET.
+                  Designed relational databases and mapped dependencies with SQL Server.
                 </li>
               </ul>
             </div>
@@ -376,7 +381,7 @@
               </ul>
             </div>
           </div>
-          <div x-data="{ activeAccordion: 0 }">
+          <div class="mt-2" x-data="{ activeAccordion: 0 }">
             <button x-on:click="activeAccordion = activeAccordion === 0 ? false : 0"
               :class="{ 'button-active': activeAccordion === 0 }" class="button mb-1">
               <h3 class="underline text-lg hover:text-slate-600 dark:text-white hover:dark:text-slate-300">Education
@@ -388,12 +393,12 @@
                   <h4 class="font-medium dark:text-slate-200">NewForce Coding School</h4>
                   <div class="italic text-sm">June 2022 - January 2023</div>
                   <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
-                    <li>Full-time Software Development Training</li>
+                    <li>Full-time Job Training</li>
                   </ul>
                 </div>
                 <div>
                   <h4 class="font-medium dark:text-slate-200">Microsoft Azure Fundamentals</h4>
-                  <div class="italic text-sm">February 2023</div>
+                  <div class="italic text-sm">March 2023</div>
                   <ul class="text-slate-600 dark:text-slate-400 list-disc ml-5 text-sm">
                     <li>AZ-900 Certification</li>
                   </ul>
